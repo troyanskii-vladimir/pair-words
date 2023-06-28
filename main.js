@@ -21,14 +21,13 @@ const onCardClickHandler = (evt) => {
   choseCard(gameCards, evt.target.dataset);
 }
 
-let openCards = new Array;
-
-start();
-
 function refreshScore() {
   scoreElement.textContent = 'Угадал ' + score + ' пар картинок.'
 }
 
+let openCards = new Array;
+
+start();
 
 function start() {
   if (gameCards.length !== gameData.length) {
@@ -51,7 +50,8 @@ function checkOpenCards() {
       const openCardsElements = gameField.querySelectorAll('.game__card-open');
       openCardsElements.forEach((elemente) => {
         elemente.classList.add('scored');
-      })
+        elemente.classList.remove('game__card-open');
+      });
       openCards = [];
     } else {
       const openCardsElements = gameField.querySelectorAll('.game__card-open');
@@ -63,7 +63,6 @@ function checkOpenCards() {
   }
 }
 
-
 function choseCard(allCards, cardId) {
   for (let i = 0; i < allCards.length; i++) {
     if (allCards[i].querySelector('.card__front').dataset.id === cardId.id) {
@@ -71,10 +70,7 @@ function choseCard(allCards, cardId) {
 
       openCards.push(gameData[i]);
 
-      console.log(openCards)
-
-      let test = setTimeout(checkOpenCards, 1000);
+      setTimeout(checkOpenCards, 1000);
     }
   }
 }
-
