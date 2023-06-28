@@ -1,5 +1,4 @@
 var socket = io();
-let score = 0;
 const getGameFieldData = () => {
     return [
         ['1', '2', '2', '3'],
@@ -8,41 +7,67 @@ const getGameFieldData = () => {
         ['7', '1', '5', '6']
     ]
 }
+
+
+//Отправка и задание имени игрока
+const form = document.querySelector('.register')
+
+form.addEventListener('submit', (evt) => {
+  evt.preventDefault()
+  const formData = new FormData(form);
+  const name = formData.get('playerName');
+
+  socket.emit('name', name)
+  form.classList.add('disable');
+})
+
+socket.on('name', (name) => {
+  setPlayerName(name);
+})
+
+const firstName = document.querySelector('.player-1__name__data');
+const secondName = document.querySelector('.player-2__name__data');
+
+function setPlayerName(name) {
+  if (firstName.textContent === 'Null') {
+    firstName.textContent = name;
+  } else {
+    secondName.textContent = name;
+  }
+}
+
+
+//Задание состояние активности игрока
+
+
+//Обработка клика по карточкам
 const gameField = document.querySelector('.game__field');
 const gameCards = gameField.querySelectorAll('.game__card');
-const scoreElement = document.querySelector('.your__score');
 const gameData = getGameFieldData().flat();
+
+
+let score = 0;
+let activePlayer = true;
 
 const onCardClickHandler = (evt) => {
     socket.emit('chat message', evt.target.dataset.id)
 }
 
 socket.on('chat message', (clickedId) => {
-    console.log(clickedId);
     choseCard(gameCards, clickedId);
 })
-
-
-
-
-function refreshScore() {
-scoreElement.textContent = 'Угадал ' + score + ' пар картинок.'
-}
 
 let openCards = new Array;
 
 start();
 
 function start() {
-if (gameCards.length !== gameData.length) {
-return;
-}
-
-for (let i = 0; i < gameCards.length; i++) {
-gameCards[i].querySelector('.game__card-img').src = `img/${gameData[i]}.png`;
-gameCards[i].querySelector('.card__front').dataset.id = i + 1;
-gameCards[i].addEventListener('click', onCardClickHandler);
-}
+  for (let i = 0; i < gameCards.length; i++) {
+    gameCards[i].querySelector('.game__card-img').src = `img/${gameData[i]}.png`;
+    gameCards[i].querySelector('.card__front').dataset.id = i + 1;
+    gameCards[i].addEventListener('click', onCardClickHandler);
+  }
+  return;
 }
 
 function checkOpenCards() {

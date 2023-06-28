@@ -3,89 +3,118 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Pair Words Game</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com"> 
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,400;0,700;1,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="normalize.css">
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-    <div class="extra__info">
-        <p class="your__score">Угадал 0 пар картинок</p>
-    </div>
+    <form class="register" action="">
+        <input type="text" name="playerName" placeholder="Имя игрока">
+        <input type="submit">
+    </form>
 
-    <div class="game__field">
-        <div class="game__field-row">
-            <div class="game__card">
-                <div class="card__front"><p>Test</p></div>
-                <div class="card__back"><img class="game__card-img"></div>
+    <main class="container">
+        <div class="header">
+            <h1 class="header__title">Find The Pair (Multiplayer)</h1>
+
+            <div class="extra-info">
+                <div class="player-1">
+                    <p class="player-1__name">Игрок: <span class="player-1__name__data">Null</span></p>
+                    <p class="player-1__score">Найдено соответствий: <span class="player-1__score__data">0</span></p>
+                </div>
+
+                <div class="player-2">
+                    <p class="player-2__name">Игрок: <span class="player-2__name__data">Null</span></p>
+                    <p class="player-2__score">Найдено соответствий: <span class="player-2__score__data">0</span></p>
+                </div>
             </div>
-            <div class="game__card">
-                <div class="card__front"><p>Test</p></div>
-                <div class="card__back"><img class="game__card-img"></div>
+
+            <div class="header__turn">Очередь игрока <span class="active-player__name">Roman</span></div>
+        </div>
+
+        <div class="extra__info">
+            <p class="your__score">Угадал 0 пар картинок</p>
+        </div>
+
+        <div class="game__field">
+            <div class="game__field-row">
+                <div class="game__card">
+                    <div class="card__front"><p>Test</p></div>
+                    <div class="card__back"><img class="game__card-img"></div>
+                </div>
+                <div class="game__card">
+                    <div class="card__front"><p>Test</p></div>
+                    <div class="card__back"><img class="game__card-img"></div>
+                </div>
+                <div class="game__card">
+                    <div class="card__front"><p>Test</p></div>
+                    <div class="card__back"><img class="game__card-img"></div>
+                </div>
+                <div class="game__card">
+                    <div class="card__front"><p>Test</p></div>
+                    <div class="card__back"><img class="game__card-img"></div>
+                </div>
             </div>
-            <div class="game__card">
-                <div class="card__front"><p>Test</p></div>
-                <div class="card__back"><img class="game__card-img"></div>
+            <div class="game__field-row">
+                <div class="game__card">
+                    <div class="card__front"><p>Test</p></div>
+                    <div class="card__back"><img class="game__card-img"></div>
+                </div>
+                <div class="game__card">
+                    <div class="card__front"><p>Test</p></div>
+                    <div class="card__back"><img class="game__card-img"></div>
+                </div>
+                <div class="game__card">
+                    <div class="card__front"><p>Test</p></div>
+                    <div class="card__back"><img class="game__card-img"></div>
+                </div>
+                <div class="game__card">
+                    <div class="card__front"><p>Test</p></div>
+                    <div class="card__back"><img class="game__card-img"></div>
+                </div>
             </div>
-            <div class="game__card">
-                <div class="card__front"><p>Test</p></div>
-                <div class="card__back"><img class="game__card-img"></div>
+            <div class="game__field-row">
+                <div class="game__card">
+                    <div class="card__front"><p>Test</p></div>
+                    <div class="card__back"><img class="game__card-img"></div>
+                </div>
+                <div class="game__card">
+                    <div class="card__front"><p>Test</p></div>
+                    <div class="card__back"><img class="game__card-img"></div>
+                </div>
+                <div class="game__card">
+                    <div class="card__front"><p>Test</p></div>
+                    <div class="card__back"><img class="game__card-img"></div>
+                </div>
+                <div class="game__card">
+                    <div class="card__front"><p>Test</p></div>
+                    <div class="card__back"><img class="game__card-img"></div>
+                </div>
+            </div>
+            <div class="game__field-row">
+                <div class="game__card">
+                    <div class="card__front"><p>Test</p></div>
+                    <div class="card__back"><img class="game__card-img"></div>
+                </div>
+                <div class="game__card">
+                    <div class="card__front"><p>Test</p></div>
+                    <div class="card__back"><img class="game__card-img"></div>
+                </div>
+                <div class="game__card">
+                    <div class="card__front"><p>Test</p></div>
+                    <div class="card__back"><img class="game__card-img"></div>
+                </div>
+                <div class="game__card">
+                    <div class="card__front"><p>Test</p></div>
+                    <div class="card__back"><img class="game__card-img"></div>
+                </div>
             </div>
         </div>
-        <div class="game__field-row">
-            <div class="game__card">
-                <div class="card__front"><p>Test</p></div>
-                <div class="card__back"><img class="game__card-img"></div>
-            </div>
-            <div class="game__card">
-                <div class="card__front"><p>Test</p></div>
-                <div class="card__back"><img class="game__card-img"></div>
-            </div>
-            <div class="game__card">
-                <div class="card__front"><p>Test</p></div>
-                <div class="card__back"><img class="game__card-img"></div>
-            </div>
-            <div class="game__card">
-                <div class="card__front"><p>Test</p></div>
-                <div class="card__back"><img class="game__card-img"></div>
-            </div>
-        </div>
-        <div class="game__field-row">
-            <div class="game__card">
-                <div class="card__front"><p>Test</p></div>
-                <div class="card__back"><img class="game__card-img"></div>
-            </div>
-            <div class="game__card">
-                <div class="card__front"><p>Test</p></div>
-                <div class="card__back"><img class="game__card-img"></div>
-            </div>
-            <div class="game__card">
-                <div class="card__front"><p>Test</p></div>
-                <div class="card__back"><img class="game__card-img"></div>
-            </div>
-            <div class="game__card">
-                <div class="card__front"><p>Test</p></div>
-                <div class="card__back"><img class="game__card-img"></div>
-            </div>
-        </div>
-        <div class="game__field-row">
-            <div class="game__card">
-                <div class="card__front"><p>Test</p></div>
-                <div class="card__back"><img class="game__card-img"></div>
-            </div>
-            <div class="game__card">
-                <div class="card__front"><p>Test</p></div>
-                <div class="card__back"><img class="game__card-img"></div>
-            </div>
-            <div class="game__card">
-                <div class="card__front"><p>Test</p></div>
-                <div class="card__back"><img class="game__card-img"></div>
-            </div>
-            <div class="game__card">
-                <div class="card__front"><p>Test</p></div>
-                <div class="card__back"><img class="game__card-img"></div>
-            </div>
-        </div>
-    </div>
+    </main>
 
 
 
